@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container mt-4">
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="alert alert-info" role="alert">
+        {% for msg in messages %}
+            <div>{{ msg }}</div>
+        {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+    <h2>
+        <small class="text-body-primary">Agregar Contacto</small>
+    </h2>
+    <form action="/agregar_contacto" method="POST" class="row g-3">
+    <div class="col-md-4">
+        <input type="text" class="form-control" name="Nombre_Completo" placeholder="Nombre completo" required>
+    </div>
+    <div class="col-md-4">
+        <input type="text" class="form-control" name="Telefono" placeholder="Teléfono" required>
+    </div>
+    <div class="col-md-4">
+        <input type="email" class="form-control" name="Email" placeholder="Email" required>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Agregar Contacto</button>
+    </div>
+    </form>
+
+    <hr class="my-4"> 
+
+    <h2 class="mb-3">Lista de Contactos</h2>
+    <table class="table table-striped table-hover">
+    <thead class="table-primary">
+        <tr>
+        <th>Nombre completo</th>
+        <th>Teléfono</th>
+        <th>Email</th>
+        <th>Operación</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contacto in contactos %}
+        <tr>
+        <td>{{ contacto.1 }}</td>
+        <td>{{ contacto.2 }}</td>
+        <td>{{ contacto.3 }}</td>
+        <td>
+            <a href="/editar/{{ contacto.0 }}" class="btn btn-sm btn-warning me-1">Editar</a>
+            <a href="/borrar/{{ contacto.0 }}" class="btn btn-sm btn-danger">Borrar</a>
+        </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+</div>
+
+{% endblock %}

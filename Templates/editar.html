@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container px-5 mt-3">
+
+<h2>
+    <small class="text-body-secondary">Editar Contacto</small>
+</h2>
+<form action="/agregar_contacto" method="POST" class="row g-4">
+<div class="col-md-3">
+    <input type="text" class="form-control" name="Nombre_Completo" placeholder="Nombre completo" required>
+</div>
+<div class="col-md-3">
+    <input type="text" class="form-control" name="Telefono" placeholder="Teléfono" required>
+</div>
+<div class="col-md-3">
+    <input type="email" class="form-control" name="Email" placeholder="Email" required>
+</div>
+<div class="col-12">
+
+
+    <button type="submit" class="btn btn-success">Actualizar</button>
+</div>
+
+</form>
+</div>
+{% endblock %}
