@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign In - Flask Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+      /* Personalización de fondo negro y centrado del contenido */
+    body {
+        background-color: #212529;  /* Fondo negro */
+        color: #ffffff;  /* Texto blanco */
+    }
+
+    .form-signin {
+        max-width: 400px;
+        margin: auto;
+        padding: 2rem;
+        background-color: #343a40;  /* Fondo oscuro para el formulario */
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-signin h1 {
+        font-size: 2rem;
+        color: #007bff;
+    }
+
+    .form-signin .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .form-floating input {
+        background-color: #495057;  /* Fondo gris oscuro para los inputs */
+        color: #ffffff;  /* Texto blanco dentro de los inputs */
+        border: 1px solid #6c757d;  /* Borde gris para los inputs */
+    }
+
+    .form-floating input:focus {
+        background-color: #6c757d;  /* Fondo gris claro en focus */
+        border-color: #007bff;  /* Borde azul en focus */
+    }
+
+    .form-check-input {
+        background-color: #495057;
+        border-color: #6c757d;
+    }
+
+    .form-check-input:checked {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+      /* Centrando el logo */
+    .form-signin img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+</head>
+<body class="d-flex align-items-center" style="height: 100vh;">
+    <main class="form-signin">
+    <form action="/login" method="POST">
+        <!-- Logo centrado -->
+        <img class="mb-4" src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap Logo" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
+
+        <!-- Email input -->
+        <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required>
+        <label for="floatingInput">Email address</label>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
+        <label for="floatingPassword">Password</label>
+        </div>
+
+        <!-- Remember me checkbox -->
+        <div class="form-check text-start mb-3">
+        <input class="form-check-input" type="checkbox" value="remember-me" id="checkDefault" name="remember_me">
+        <label class="form-check-label" for="checkDefault">
+            Remember me
+        </label>
+        </div>
+
+        <!-- Submit button -->
+        <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+
+        <p class="mt-5 mb-3 text-body-secondary text-center">&copy; 2017–2025</p>
+    </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
+
