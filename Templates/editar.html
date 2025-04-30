@@ -7,7 +7,7 @@
 <h2>
     <small class="text-body-secondary">Editar Contacto</small>
 </h2>
-<form action="/agregar_contacto" method="POST" class="row g-4">
+<form action="{{ url_for('actualizar_contacto', id=contactos[0]) }}" method="POST" class="row g-4">
 <div class="col-md-3">
     <input type="text" class="form-control" name="Nombre_Completo" placeholder="Nombre completo" required>
 </div>
